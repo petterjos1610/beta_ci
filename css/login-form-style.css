@@ -1,0 +1,209 @@
+@charset "utf-8";
+/* CSS Document */
+
+.login-outer {
+	margin:100px auto 0;
+	width:825px;
+	overflow:hidden;
+}
+.login-body {
+	width:100%;
+	float:left;
+	background:#2a94d6;
+	border-top:0;
+}
+.login-wrapper {
+	border-radius: 3px;
+	box-shadow: 0 2px 7px rgba(0, 0, 0, 0.4);
+	float:left;
+	min-height: 400px;
+	padding:10px;
+	width:805px;
+	background: #fafafa; /* Old browsers */
+	background: -moz-linear-gradient(top, #fafafa 0%, #e5e5e5 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fafafa), color-stop(100%, #e5e5e5)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #fafafa 0%, #e5e5e5 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #fafafa 0%, #e5e5e5 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #fafafa 0%, #e5e5e5 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #fafafa 0%, #e5e5e5 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafafa', endColorstr='#e5e5e5', GradientType=0 ); /* IE6-9 */
+}
+.login-form-wrap {
+	width:290px;
+	display:inline-block;
+	margin:0 0 0 15px;
+	
+}
+.login-logo {
+	width:200px;
+	float:left;
+	margin:28px 0 0 3px;
+}
+.login-form-wrap form {
+	width:100%;
+	float:left;
+	margin:28px 0 0 0;
+}
+#usrn {
+	background-color: #F3F5F6;
+	border: 1px solid #CCCCCC;
+	border-radius: 3px 3px 0 0;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2) inset;
+	margin-top: 15px;
+	padding: 12px 0 12px 12px;
+	width:258px;
+}
+.zen-assistiveText {
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute !important;
+	width: 1px;
+}
+.input {
+	background-color: #F3F5F6;
+	border: 0 solid #F3F5F6;
+	color: #586064;
+	font-size: 13px;
+	margin-left: 0;
+	margin-top: 3px;
+	width: 250px;
+}
+#pswd {
+	background-color: #F3F5F6;
+	width:258px;
+	border: 1px solid #CCCCCC;
+	border-radius: 0 0 3px 3px;
+	box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.2) inset;
+	margin-top: -1px;
+	padding: 12px 0 12px 12px;
+}
+#login {
+	width:270px;
+	float:left;
+	margin:15px 0 0 0;
+	border: 1px solid #4176BA;
+	color: #FFFFFF;
+	font-family: 'helvetica_ce_35_thinregular';
+	font-size: 13pt;
+	font-weight: 600;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+	border-radius: 3px;
+	display: inline-block;
+	line-height: 22px;
+	padding:7px 20px;
+	cursor:pointer;
+	background: #2789c7; /* Old browsers */
+	background: -moz-linear-gradient(top, #2789c7 0%, #3f9fd9 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2789c7), color-stop(100%, #3f9fd9)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #2789c7 0%, #3f9fd9 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #2789c7 0%, #3f9fd9 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #2789c7 0%, #3f9fd9 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #2789c7 0%, #3f9fd9 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2789c7', endColorstr='#3f9fd9', GradientType=0 ); /* IE6-9 */
+}
+#rem {
+	color: #333;
+	margin-left: 2px;
+	margin-top: 18px;
+	width:100%;
+	float:left;
+	font-family: 'helvetica_ce_35_thinregular';
+	font-size: 14px;
+}
+#forgot {
+	margin-bottom: 15px;
+	width:100%;
+	float:left;
+	font-size:14px;
+	margin-top: 20px;
+	font-family: 'helvetica_ce_35_thinregular';
+}
+#forgot a {
+	color: #176ca1;
+}
+#forgot a:hover {
+	color: #000;
+}
+.clickarea {
+	display: inline-block;
+	margin-left:20px;
+	height: 401px;
+	background:url(../imgs/login_s1_mobile_app.jpg) no-repeat;
+	width: 478px;
+	float:left;
+}
+.reg-now {
+	float:left;
+	font-size:15px;
+	font-family: 'Roboto', sans-serif;
+	padding:8px 20px;
+	color:#fff;
+	border-radius:4px;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+	margin:200px 0 0 15px;
+	background: #fcb14b; /* Old browsers */
+	background: -moz-linear-gradient(top, #fcb14b 0%, #eb8e17 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fcb14b), color-stop(100%, #eb8e17)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #fcb14b 0%, #eb8e17 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #fcb14b 0%, #eb8e17 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #fcb14b 0%, #eb8e17 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #fcb14b 0%, #eb8e17 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcb14b', endColorstr='#eb8e17', GradientType=0 ); /* IE6-9 */
+}
+.link-tab {
+	width:100%;
+	float:left;
+	margin-top:30px;
+}
+.link-tab a {
+	width:145px;
+	height:115px;
+	float:left;
+	margin-left:11px;
+	background:#fff;
+	-webkit-box-shadow: 0px 5px 5px 0px rgba(28, 28, 50, 0.9);
+	-moz-box-shadow:    0px 5px 5px 0px rgba(28, 28, 50, 0.9);
+	box-shadow:         0px 5px 5px 0px rgba(28, 28, 50, 0.9);
+}
+.link-tab a:hover {
+	background:#ffa32c;
+}
+.link-tab a:hover p, .link-tab a:hover span {
+	color:#FFF;
+}
+.link-tab a:hover span .fa {
+	color:#FFF;
+}
+.link-tab a p {
+	font-size:14px;
+	color:#333;
+	font-family: 'Roboto', sans-serif;
+	width:120px;
+	margin:30px 0 0 20px;
+}
+.link-tab a span {
+	font-size:12px;
+	font-family: 'Roboto', sans-serif;
+	width:120px;
+	margin:10px 0 0 20px;
+	color:#666;
+}
+.link-tab a span .fa {
+	color:#F00;
+	font-size:18px;
+	top:2px;
+	position:relative;
+	left:5px;
+}
+.login-copyright {
+	font-size: 12px;
+	line-height: 14px;
+	float:left;
+	width:100%;
+	margin-top: 10px;
+	text-align: center;
+	color:#fff;
+}

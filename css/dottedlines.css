@@ -1,0 +1,15 @@
+#dottedlines{
+  stroke-dasharray: 10;
+  -webkit-animation-name: dash;
+  -webkit-animation-duration: 10s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-play-state: running;
+  animation: dash 10s infinite linear;
+}
+
+@-webkit-keyframes dash {
+  to {
+    stroke-dashoffset: -1000;
+  }
+}

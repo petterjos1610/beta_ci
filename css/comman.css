@@ -1,0 +1,115 @@
+.wrapper > h1, .wrapper > .red-heading, .wrapper > .dark-orange {
+	width:98%;
+	float:left;
+	color:#fff;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	font-weight:bold;
+	font-size:18px;
+	padding:10px 0 10px 15px;
+	margin-top:40px;
+}
+.wrapper > h1:after, .wrapper > .red-heading:after, .wrapper > .dark-orange:after {
+	top: 100%;
+	left: 3%;
+	position: absolute;
+	pointer-events: none;
+	border-width: 10px;
+	margin-left: -10px;
+	height: 0;
+	width: 0;
+}
+.edit-cou > h4, .p-map > h4 {
+	width:98%;
+	float:left;
+	color:#fff;
+	font-size:18px;
+	padding:7px 0 7px 15px;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	position:relative;
+	font-family: 'Roboto', sans-serif;
+}
+.edit-cou > h4:after, .p-map > h4:after {
+	top: 100%;
+	left: 3%;
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-width: 10px;
+	margin-left: -10px;
+}
+.p-map > .left-part h5, .p-map > .right-part h5, .p-map > .view-map-location-detail > .map-view-title, .p-map > .view-map-location > .map-view-title, .green-table > h6, .blue-table > h6, .orange-table > h6 {
+	width:96.5%;
+	float:left;
+	color:#fff;
+	font-size:15px;
+	padding:6px 0 6px 15px;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	position:relative;
+	font-weight:400;
+	margin-top:12px;
+	font-family: 'Roboto', sans-serif;
+}
+.p-map > .left-part h5:after, .p-map > .right-part h5:after, .p-map > .view-map-location-detail > .map-view-title:after, .p-map > .view-map-location > .map-view-title:after, .green-table > h6:after, .blue-table > h6:after, .orange-table > h6:after {
+	top: 100%;
+	left: 20px;
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-width: 10px;
+	margin-left: -10px;
+}
+.step-two .red-inp, .step-two .black-inp {
+	color: #fff;
+	width:100%;
+	font-family: 'Roboto', sans-serif;
+	float: left;
+	font-size:14px;
+	padding: 6px 0;
+	margin:25px 0 0 10px;
+	border-radius:5px;
+	cursor:default;
+	border:0;
+}
+.admin-page-left-part h5, .admin-page-right-part .sps-right, .admin-page-left-part .sps {
+	float:left;
+	color:#fff;
+	font-size:15px;
+	padding:6px 0 6px 15px;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	position:relative;
+	font-weight:400;
+	margin-top:12px;
+}
+.admin-page-left-part h5:after, .admin-page-right-part .sps-right:after, .admin-page-left-part .sps:after {
+	top: 100%;
+	left: 9%;
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-width: 10px;
+	margin-left: -10px;
+}
+.right-menuBar li a, .student-data-title a, .add-group-a, .bridge-wrapper-left a, .programme-list .view-title a, .bridge-wrapper-nav li a, .link-tab a, .slideContent-orange table tr, .slideContent-red table tr, .slideContent-yellow table tr, .slideContent-green table tr, .slideContent-blue table tr {
+	-webkit-transition: ease all 0.5s;
+	-moz-transition: ease all 0.5s;
+	transition:ease all 0.5s;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+}
+.right-menuBar li a:hover.r-activity a:hover, .add-group-a:hover, .bridge-wrapper-left a:hover, .programme-list .view-title a:hover, .bridge-wrapper-nav li a:hover, .link-tab a:hover .slideContent-orange table tr:hover, .slideContent-red table tr:hover, .slideContent-yellow table tr:hover, .slideContent-green table tr:hover, .slideContent-blue table tr:hover {
+	-webkit-transition: ease all 0.5s;
+	-moz-transition: ease all 0.5s;
+	transition:ease all 0.5s;
+}

@@ -1,0 +1,213 @@
+@charset "utf-8";
+/* CSS Document */
+@import url('page-css.css');
+@import url('../fonts/helvetica/stylesheet.css');
+@import url('awesome-font/css/font-awesome.css');
+@import url('menu.css');
+@import url('tabbing.css');
+@import url('checkbox.css');
+@import url('steps.css');
+@import url('jquerysctipttop.css');
+@import url('login-form-style.css');
+@import url('color-toggles.css');
+@import url('comman.css');
+@import url('slim-scroll.css');
+@import url('prettify.css');
+
+
+/* =========== */
+/* = General = */
+/* =========== */
+
+body {
+	width:100%;
+	height:auto;
+	background:#f0f8fe; border-top:5px solid #005784;
+}
+ol, ul, li {
+	list-style:none;
+}
+a, input, select {
+	text-decoration:none;
+	outline:none;
+}
+img {
+	border:0 none;
+}
+* {
+	margin:0;
+	padding:0;
+}
+header, footer, section, canvas, nav, fieldset, figure {
+	display:block;
+}
+.clear {
+	clear:both;
+}
+h1, h2, h3, h4{
+	font-weight:normal;
+	font-family: 'helvetica_ce_35_thinregular';
+	line-height:normal;
+	position: relative;
+}
+
+h5, h6, p, input, select {
+	font-family: 'Roboto', sans-serif;
+	line-height:normal;
+}
+
+bquote, q {
+	quotes: none;
+}
+bquote:before, bquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+:focus {
+	outline: 0;
+}
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+table tr td, table tr th {
+     font-family: 'Roboto', sans-serif;
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+/* ========= */
+/* = margin pedding = */
+/* ========= */
+
+.top5 {
+	margin-top:5px;
+}
+.left0 {
+	margin-left:0;
+}
+.top0 {
+	margin-top:0;
+}
+.top10 {
+	margin-top:10px;
+}
+.top15 {
+	margin-top:15px;
+}
+.top20 {
+	margin-top:20px;
+}
+.top25 {
+	margin-top:25px;
+}
+.top30 {
+	margin-top:30px;
+}
+.top35 {
+	margin-top:35px;
+}
+
+.top40 {
+	margin-top:40px;
+}
+.top45 {
+	margin-top:45px;
+}
+.top50 {
+	margin-top:50px;
+}
+.right5 {
+	margin-right:5px;
+}
+.right0 {
+	margin-right:0;
+}
+.right10 {
+	margin-right:10px;
+}
+.right15 {
+	margin-right:15px;
+}
+.right20 {
+	margin-right:20px;
+}
+.right25 {
+	margin-right:25px;
+}
+.right30 {
+	margin-right:30px;
+}
+.right35 {
+	margin-right:35px;
+}
+.border_bottom {
+	border-bottom:1px solid #ddd;
+}
+.border_top {
+	border-bottom:1px solid #ddd;
+}
+.bottom5 {
+	margin-bottom:5px;
+}
+.bottom10 {
+	margin-bottom:10px;
+}
+.bottom15 {
+	margin-bottom:15px;
+}
+.bottom20 {
+	margin-bottom:20px;
+}
+.bottom25 {
+	margin-bottom:25px;
+}
+.bottom30 {
+	margin-bottom:30px;
+}
+.bottom35 {
+	margin-bottom:35px;
+}
+.top0 {
+	margin-top:0 !important;
+}
+.left5 {
+	margin-left:5px;
+}
+.left10 {
+	margin-left:10px;
+}
+.left15 {
+	margin-left:15px;
+}
+.left20 {
+	margin-left:20px;
+}
+.left25 {
+	margin-left:25px;
+}
+.left30 {
+	margin-left:30px;
+}
+.left35 {
+	margin-left:35px;
+}
+
+.left55 {
+	margin-left:55px;
+}
+
+
+.t-align-l{text-align:left;}
+.t-align-r{text-align:right;}
+.t-align-c{text-align:center;}
+.t-align-j{text-align:justyfy;}

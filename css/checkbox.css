@@ -1,0 +1,97 @@
+aside > input[type=checkbox].css-checkbox {
+	position: absolute;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	height:1px;
+	width:1px;
+	margin:-1px;
+	padding:0;
+	border:0;
+}
+aside > input[type=checkbox].css-checkbox + label.css-label {
+	padding-left:20px;
+	height:15px;
+	display:inline-block;
+	line-height:15px;
+	background-repeat:no-repeat;
+	background-position: 0 0;
+	font-size:15px;
+	vertical-align:middle;
+	cursor:pointer;
+	margin-left:20px
+}
+aside > input[type=checkbox].css-checkbox:checked + label.css-label {
+	background-position: 0 -15px;
+	margin-left:20px
+}
+.css-label {
+	background-image:url(http://csscheckbox.com/checkboxes/dark-check-cyan.png);
+}
+
+
+
+/*two*/
+
+aside > input[type=checkbox].css-checkbox2 {
+	position: absolute;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	height:1px;
+	width:1px;
+	margin:-1px;
+	padding:0;
+	border:0;
+}
+aside > input[type=checkbox].css-checkbox2 + label.css-label2 {
+	padding-left:20px;
+	height:15px;
+	display:inline-block;
+	line-height:15px;
+	background-repeat:no-repeat;
+	background-position: 0 0;
+	font-size:15px;
+	vertical-align:middle;
+	cursor:pointer;
+	margin-left:20px
+}
+aside > input[type=checkbox].css-checkbox2:checked + label.css-label2 {
+	background-position: 0 -15px;
+	margin-left:20px
+}
+.css-label2 {
+	background-image:url(http://csscheckbox.com/checkboxes/dark-check-cyan.png);
+}
+
+
+
+/*three*/
+
+aside > input[type=checkbox].css-checkbox3 {
+	position: absolute;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	height:1px;
+	width:1px;
+	margin:-1px;
+	padding:0;
+	border:0;
+}
+aside > input[type=checkbox].css-checkbox3 + label.css-label3 {
+	padding-left:20px;
+	height:15px;
+	display:inline-block;
+	line-height:15px;
+	background-repeat:no-repeat;
+	background-position: 0 0;
+	font-size:15px;
+	vertical-align:middle;
+	cursor:pointer;
+	margin-left:20px
+}
+aside > input[type=checkbox].css-checkbox3:checked + label.css-label3 {
+	background-position: 0 -15px;
+	margin-left:20px
+}
+.css-label3 {
+	background-image:url(http://csscheckbox.com/checkboxes/dark-check-cyan.png);
+}
