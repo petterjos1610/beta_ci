@@ -20,7 +20,7 @@
 
 
 		<div class="col_fullwidth">
-			<a href="?p=<?php echo md5(Page::$stf[1]); ?>"><input name="" type="button" class="btn darkgreen rc right" value="Add" style="margin-bottom:20px;"></a>
+			<a href="<?php echo base_url() . "index.php/schoolstaff/create/" . md5(Page::$stf[1]); ?>"><input name="" type="button" class="btn darkgreen rc right" value="Add" style="margin-bottom:20px;"></a>
 			<input class='text_area left' type='text' id='search' value='' style='width:200px; background:url(imgs/search_icon_sml.gif) no-repeat scroll 7px 7px; background-position:7px 50%; padding-left:35px;'>
 		</div>
 		<div class="col_fullwidth">

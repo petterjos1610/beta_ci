@@ -1,12 +1,19 @@
 <?php
 class Myaccount extends CI_Controller {
 
+	public function index() {
+
+		self::view();
+
+	}
+
 	public function view() {
 
-		print_r($this->session->userdata);
 		if ($this->session->userdata('user'))
+
 			echo $this->uri->segment(3);
-		else echo "not logged in";
+
+		else redirect(base_url(), 'location');
 
 	}
 

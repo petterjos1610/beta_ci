@@ -38,17 +38,21 @@ class Schools extends CI_Controller {
 
 			}
 
-		}
+		} else redirect(base_url(), 'location');
 
 	}
 
 	public function create() {
 
-		$data = array(
-			'view' => 'schools/edit.php',
-			'p' => $this->uri->segment(1)
-		);
-		$this->load->view('templates/auth', $data);
+		if ($this->session->userdata('user')) {
+
+			$data = array(
+				'view' => 'schools/edit.php',
+				'p' => $this->uri->segment(1)
+			);
+			$this->load->view('templates/auth', $data);
+
+		} else redirect(base_url(), 'location');
 
 	}
 
