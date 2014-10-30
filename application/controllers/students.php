@@ -14,18 +14,16 @@ class Students extends CI_Controller {
 			$this->load->model('student');
 			if ($id === 0) {
 
-				$students = $this->student->getStudents();
 				$data = array(
-					'students' => $students,
+					'students' => $this->student->getStudents(),
 					'view' => 'students/list.php'
 				);
 				$this->load->view('templates/auth', $data);
 
 			} else {
 
-				$student = $this->student->getStudent($id);
 				$data = array(
-					'student' => $student,
+					'student' => $this->student->getStudent($id),
 					'view' => 'students/profile.php',
 					'client' => $this->client
 				);
@@ -37,15 +35,15 @@ class Students extends CI_Controller {
 
 	}
 
-	public function edit($ignore = NULL) {
+	public function edit($ignore = NULL, $id) {
 
 		if ($this->session->userdata('user')) {
 
 			if (isset($id)) {
 
-				$student = $this->student->getStudent($id);
+				$this->load->model('student');
 				$data = array(
-					'student' => $student,
+					'student' => $this->student->getStudent($id),
 					'view' => 'students/edit.php'
 				);
 				$this->load->view('templates/auth', $data);

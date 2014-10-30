@@ -1,4 +1,4 @@
-<?php print_r($student); ?>
+<?php //print_r($student); ?>
 <div class="popup" id="popup"></div>
 
 <div id="wrapper">
@@ -74,13 +74,16 @@
 						<div class="form_label">Ethnic Background:<font class="font_red">*</font></div>
 						<select name="ethnicityId" id="" class="text_area select_img" onBlur="isNotEmpty(this);" tabIndex="10" style="overflow:hidden">
 							<option value="" SELECTED DISABLED>Choose ethnicity</option>
-							<?php $ethnicities = new Ethnicity();
+							<?php 
+							/*
+							$ethnicities = new Ethnicity();
 							$ethnicities = $ethnicities->getEthnicities();
 							for ($i=0; $i<sizeof($ethnicities); $i++) {
 								echo "<option value='".$ethnicities[$i]->getId()."'";
 								if (isset($student) && $student->getEthnicityId() == $ethnicities[$i]->getId()) echo " SELECTED";
 								echo ">".$ethnicities[$i]->getEthnicity()."</option>";
 							}
+							*/
 							?>
 						</select>
 					</div>
@@ -88,13 +91,17 @@
 						<div class="form_label">Religious Affiliation:<font class="font_red">*</font></div>
 						<select name="religionId" id="" class="text_area select_img" onBlur="isNotEmpty(this);" tabIndex="11" style="overflow:hidden">
 						<option value="" SELECTED DISABLED>Choose religion</option>
-						<?php $religions = new Religion();
+						<?php
+						/*
+						$religions = new Religion();
 						$religions = $religions->getReligions();
 						for ($i=0; $i<sizeof($religions); $i++) {
 							echo "<option value='".$religions[$i]->getId()."'";
 							if (isset($student) && $student->getReligionId() == $religions[$i]->getId()) echo " SELECTED";
 							echo ">".$religions[$i]->getReligion()."</option>";
-						} ?>
+						}
+						*/
+						?>
 						</select>
 					</div>
 				</div>
@@ -102,7 +109,7 @@
 					
 					<div class="plain vert_space">
 						<div class="form_label">Email:</div>
-						<input name="email" type="text" id="" class="text_area" onBlur="if (this.value != '') isEmail(this);" tabIndex="5" value="<?php if (isset($student)) echo $student->getUser()->getEmail(); ?>">
+						<input name="email" type="text" id="" class="text_area" onBlur="if (this.value != '') isEmail(this);" tabIndex="5" value="<?php if (isset($student)) echo $student->email; ?>">
 					</div>
 					<div class="plain vert_space">
 						<div class="form_label label_inline">Pastoral:<font class="font_red">*</font>
@@ -112,6 +119,7 @@
 							<select name="teacherId" id="" class="text_area select_img" onBlur="isNotEmpty(this);" tabIndex="9">
 								<option value="">Choose pastorial teacher</option>
 								<?php
+								/*
 									$schStaff = new SchoolStaff();
 									$schStaff = $schStaff->getStaff();
 									for ($i=0; $i<sizeof($schStaff); $i++) {
@@ -121,6 +129,7 @@
 											echo ">".$schStaff[$i]->getDisplayName()."</option>";
 										}
 									}
+								*/
 								?>
 							</select>
 						</div>
@@ -130,6 +139,7 @@
 							<select name="urn" id="" class="text_area select_img" onBlur="isNotEmpty(this);" tabIndex="12">
 								<?php if (!isset($_SESSION['role'])) { ?><option value="">Choose school</option><?php } ?>
 								<?php
+								/*
 									$schools = new School();
 									$schools = $schools->getSchools();
 									for ($i=0; $i<sizeof($schools); $i++) {
@@ -139,13 +149,14 @@
 											echo ">".$schools[$i]->getSchoolName()."</option>";
 										}
 									}
+								*/
 								?>
 							</select>
 						</div>
 					</div>
 					<div class="plain vert_space">
 						<div class="plain" style="overflow:hidden; margin-top:35px;">
-							<input name="active" id="active" class="css-checkbox" type="checkbox" value="1"<?php if (!isset($student) || (isset($student) && $student->isActive())) echo " CHECKED"; ?>/>
+							<input name="active" id="active" class="css-checkbox" type="checkbox" value="1"<?php if (!isset($student) || (isset($student) && $student->enabled)) echo " CHECKED"; ?>/>
 								<label for="active" class="css-label">Active</label>
 						</div>
 					</div>
@@ -161,7 +172,7 @@
 								<div class="form_label label_inline">UPN:<font class="font_red">*</font>
 									<a onClick="infoPopup('UPN','Thirteen characters long, the Unique Pupil Number is a number that identifies each pupil in England uniquely. It is intended to remain with them throughout their school career regardless of any change in school or LA.');"><i class="fa fa-info-circle text-danger" style="cursor:pointer; font-size:13px;"></i></a>
 								</div>
-								<?php if (isset($student)) echo $student->getUpn(); ?><input name="upn" type="<?php if (isset($student)) echo "hidden"; else echo "text"; ?>" id="" class="text_area input_inline" onBlur="isNotEmpty(this); isUpn(this);" tabIndex="13" value="<?php if (isset($student)) echo $student->getUpn(); ?>">
+								<?php if (isset($student)) echo $student->s_upn; ?><input name="upn" type="<?php if (isset($student)) echo "hidden"; else echo "text"; ?>" id="" class="text_area input_inline" onBlur="isNotEmpty(this); isUpn(this);" tabIndex="13" value="<?php if (isset($student)) echo $student->s_upn; ?>">
 							</div>
 							<!---<div class="plain vert_space"><div class="form_label  label_inline">Former UPN:</div>
 							<input name="prevUpn" type="text" id="" class="text_area input_inline" tabIndex="13"></div>---->
@@ -169,33 +180,35 @@
 								<div class="form_label label_inline">ULN:
 									<a onClick="infoPopup('ULN','Ten digits long, the Unique Learner Number (ULN) is a reference number issued and held by the Learner Register (LR). This is used alongside and to access the Personal Learning Record of anyone over the age of 14 involved in UK education or training. The 10-digit ULN has been designed to ensure that no additional meaning can be inferred from its structure e.g. geographical location, level of learning.');"><i class="fa fa-info-circle text-danger" style="cursor:pointer; font-size:13px;"></i></a>
 								</div>
-								<input name="uln" type="text" id="" class="text_area input_inline" onBlur="if (this.value != '') isUln(this);" tabIndex="14" value="<?php if (isset($student)) echo $student->getUln(); ?>">
+								<input name="uln" type="text" id="" class="text_area input_inline" onBlur="if (this.value != '') isUln(this);" tabIndex="14" value="<?php if (isset($student)) echo $student->s_uln; ?>">
 							</div>
 						</div>
 						<div class="col_half right" style="height:140px;">
 							<div class="plain vert_space">
 								<div class="form_label label_inline">Address:<font class="font_red">*</font></div>
-								<textarea name="address" id="" class="text_area input_inline" onBlur="isNotEmpty(this);" tabIndex="15"><?php if (isset($student)) echo $student->getAddress(); ?></textarea>
+								<textarea name="address" id="" class="text_area input_inline" onBlur="isNotEmpty(this);" tabIndex="15"><?php if (isset($student)) echo $student->s_address; ?></textarea>
 							</div>
 							<div class="plain vert_space">
 								<div class="form_label label_inline">Postcode:<font class="font_red">*</font></div>
-								<input type="text" name="postcode" id="" class="text_area input_inline" onBlur="isNotEmpty(this); isPostcode(this);" tabIndex="16" value="<?php if (isset($student)) echo $student->getPostcode(); ?>">
+								<input type="text" name="postcode" id="" class="text_area input_inline" onBlur="isNotEmpty(this); isPostcode(this);" tabIndex="16" value="<?php if (isset($student)) echo $student->s_postcode; ?>">
 							</div>
 						</div>
 						<div class="col_half left">
 							<div class="form_label label_inline">Behaviour Points Total:</div>
-							<input name="behaviourPoints" type="text" id="behaviourPoints" class="text_area input_inline" tabIndex="17" value="<?php if (isset($student)) echo $student->getBehaviourPoints(); ?>">
+							<input name="behaviourPoints" type="text" id="behaviourPoints" class="text_area input_inline" tabIndex="17" value="<?php if (isset($student)) echo $student->s_behaviourPoints; ?>">
 						</div>
 						<div class="col_half right">
 							<div class="form_label label_inline">Achievement Points Total:</div>
-							<input name="achievementPoints" type="text" id="achievementPoints" class="text_area input_inline" tabIndex="18" value="<?php if (isset($student)) echo $student->getAchievementPoints(); ?>">
+							<input name="achievementPoints" type="text" id="achievementPoints" class="text_area input_inline" tabIndex="18" value="<?php if (isset($student)) echo $student->s_achievementPoints; ?>">
 						</div>
 						<div class="spacer30"></div>
 						<div class="form_label">Student Types:</div>
-						<?php $studentTypes = new StudentType();
+						<?php
+						$tabIndex = 19;
+						/*
+						$studentTypes = new StudentType();
 						if (isset($student)) $studentsTypes = $student->getStudentTypes();
 						$studentTypes = $studentTypes->getStudentTypes();
-						$tabIndex = 19;
 						for ($i=0; $i<sizeof($studentTypes); $i++) { ?>
 							<div class="plain" style="width:25%; float:left">
 								
@@ -207,12 +220,15 @@
 								} ?>/>
 								<label for="<?php echo $studentTypes[$i]->getName(); ?>" class="css-label" tabIndex="<?php echo $tabIndex+$i; $tabIndex += $i; ?>"><?php echo $studentTypes[$i]->getName(); ?></label>
 							</div>
-						<?php } ?>
+						<?php } 
+						*/
+						?>
 					</div>
 				</div>
 			</div>
 			<div class="inner_col rc">
 			<?php if (isset($student)) {
+				/*
 				$schAtt = $student->getSchoolAttendance();
 				if ($schAtt != null) {
 					$today = new DateTime();
@@ -223,6 +239,7 @@
 					$startDate->setDate($date1[0],$date1[1],$date1[2]);
 					$endDate->setDate($date2[0],$date2[1],$date2[2]);
 				}
+				*/
 			}
 			?>
 				<h3 class="font_grey">Attendance Information <a onclick="infoPopup('Attendance Information','Please provide full details of attendance and then click the &ldquo;Create new Attendance Record&rdquo; button below when finished.');"><i class="fa fa-info-circle font_white" style="cursor:pointer; font-size:19px; float:right; margin-top:2px;"></i></a></h3>
@@ -234,9 +251,11 @@
 					<div class="col_half left">
 						<div class="form_label">Attendance Period Start:</div>
 						<input type="text" name="attendanceStart" id="attendanceStart" value="<?php if (isset($startDate,$endDate)) echo $startDate->format("m/d/Y"); ?>" class="text_area select_img" onChange="if (this.value != '' && document.forms[0].attendanceEnd.value != '') calculateAttendanceDays(this,document.forms[0].attendanceEnd,document.forms[0].possibleAttendances); $('#newAtt').slideUp('slow');" tabIndex="<?php echo $tabIndex+1; ?>"<?php if (isset($startDate,$endDate) && $startDate <= $today && $endDate >= $today) echo " disabled"; ?>>
+						<link href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" rel="stylesheet">
+						<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 						<script>
 							$(function() {
-							$( "#attendanceStart" ).datepicker();
+								$( "#attendanceStart" ).datepicker();
 							});
 						</script>
 					</div>
@@ -245,7 +264,7 @@
 						<input type="text" name="attendanceEnd" id="attendanceEnd" value="<?php if (isset($startDate,$endDate)) echo $endDate->format("m/d/Y"); ?>" class="text_area select_img"  onChange="if (this.value != '' && document.forms[0].attendanceStart.value != '') calculateAttendanceDays(document.forms[0].attendanceStart,this,document.forms[0].possibleAttendances); $('#newAtt').slideUp('slow');" tabIndex="<?php echo $tabIndex+2; ?>"<?php if (isset($startDate,$endDate) && $startDate <= $today && $endDate >= $today) echo " disabled"; ?>>
 						<script>
 							$(function() {
-							$( "#attendanceEnd" ).datepicker();
+								$( "#attendanceEnd" ).datepicker();
 							});
 						</script>
 					</div>
@@ -305,7 +324,9 @@
 						</div>
 					</div>
 				</div>
-				<?php $subjects = new Subject();
+				<?php
+				/*
+				$subjects = new Subject();
 				$subjects = $subjects->getSubjects();
 				for ($i=0; $i<sizeof($subjects); $i++) {
 					if ($subjects[$i]->getCategory()->getCategory() != "Academic") {
@@ -321,14 +342,16 @@
 						$stuGrads[] = $studentGrades[$i]->getSubjectId();
 					}
 				}
+				*/
 				$tabIndex += 7;
-				for ($i=0; $i<sizeof($subjects); $i++) {
-					if ($subjects[$i]->getCategory()->getCategory() == "Academic" && $subjects[$i]->isEnabled()) {
-						if ($i == 0) echo '<div class="col_half left">';
-						else if ($i == $halfofX) echo '<div class="col_half right">';
+				//for ($i=0; $i<sizeof($subjects); $i++) {
+					//if ($subjects[$i]->getCategory()->getCategory() == "Academic" && $subjects[$i]->isEnabled()) {
+						//if ($i == 0)
+							echo '<div class="col_half left">';
+						//else if ($i == $halfofX) echo '<div class="col_half right">';
 						?>
 						<div class="plain">
-							<div class="form_label label_inline"><?php echo $subjects[$i]->getSubject(); ?></div>
+							<div class="form_label label_inline"><?php /*echo $subjects[$i]->getSubject(); ?></div>
 							<div class="plain input_line" style="width:95px; padding-left:12px; display:inline-block; overflow:hidden;">
 								<select name="predicted[]" id="predicted<?php echo $tabIndex+$i+$index; ?>" class="text_area select_img" style="width:83px; overflow:hidden;" tabIndex="<?php echo $tabIndex+$i+$index++; ?>" onChange="checkGrades(this,'<?php echo $tabIndex+$i+$index-1; ?>');">
 									<?php if (!$subjects[$i]->isCore()) { ?><option value="" SELECTED>N/A</option><?php } ?>
@@ -392,15 +415,17 @@
 											</optgroup>
 										<?php }
 									} ?>
-								</select>
+								</select> <?php */ ?>
 							</div>
 						</div>
-						<?php 
-						if ($i == $halfofX-1) echo "</div>";
-						else if ($i ==  sizeof($subjects)-1) echo "</div>";
-					} else $halfofX--;
-				}
-				$index += $tabIndex+sizeof($subjects);
+						<?php
+						//if ($i == $halfofX-1)
+						echo "</div>";
+						//else if ($i ==  sizeof($subjects)-1) echo "</div>";
+					//} else $halfofX--;
+				//}
+				//$index += $tabIndex+sizeof($subjects);
+				$index = $tabIndex;
 				?>
 				</div>
 			<div class="inner_col rc">
@@ -408,23 +433,24 @@
 				<div class="spacer30"></div>
 				<div class="col_half left">
 					<div class="form_label label_inline">Areas of Strength:</div>
-					<textarea name="strengths" id="" rows="5" maxlength="1000" class="text_area input_inline" tabIndex="<?php echo $index++; ?>"><?php if (isset($student)) echo $student->getStrengths(); ?></textarea>
+					<textarea name="strengths" id="" rows="5" maxlength="1000" class="text_area input_inline" tabIndex="<?php echo $index++; ?>"><?php if (isset($student)) echo $student->s_strengths; ?></textarea>
 					<!---<div class="form_label label_inline">Local Area Environment:</div>
 					<textarea name="environment" id="" rows="5" maxlength="1000" class="text_area input_inline" tabIndex="30"></textarea>---->
 					<div class="form_label label_inline">Previous Interventions:</div>
-					<textarea name="prevInterventions" id="" rows="5" maxlength="1000" class="text_area input_inline" tabIndex="<?php echo $index+1; ?>"><?php if (isset($student)) echo $student->getPreviousInterventions(); ?></textarea>
+					<textarea name="prevInterventions" id="" rows="5" maxlength="1000" class="text_area input_inline" tabIndex="<?php echo $index+1; ?>"><?php if (isset($student)) echo $student->s_previousInterventions; ?></textarea>
 					<div class="clearfix"></div>
 				</div>
 				<div class="col_half right">
 					<div class="form_label label_inline">Areas of Concern:</div>
-					<textarea name="concerns" id="" rows="5" maxlength="1000" class="text_area input_inline" tabIndex="<?php echo $index; ?>"><?php if (isset($student)) echo $student->getConcerns(); ?></textarea>
+					<textarea name="concerns" id="" rows="5" maxlength="1000" class="text_area input_inline" tabIndex="<?php echo $index; ?>"><?php if (isset($student)) echo $student->s_concerns; ?></textarea>
 					<div class="form_label label_inline">Additional Comments:</div>
-					<textarea name="additionalComments" id="" rows="5" maxlength="1000" class="text_area input_inline" tabIndex="<?php echo $index+2; ?>"><?php if (isset($student)) echo $student->getAdditionalComments(); ?></textarea>
+					<textarea name="additionalComments" id="" rows="5" maxlength="1000" class="text_area input_inline" tabIndex="<?php echo $index+2; ?>"><?php if (isset($student)) echo $student->s_additionalComments; ?></textarea>
 					<div class="form_label label_inline">Phase<font class="font_red">*</font></div>
 					<div class="plain input_inline">
 						<select name="phaseId" class="text_area select_img" tabIndex="<?php echo $index+3; ?>" onBlur="isNotEmpty(this);">
 							<option value="" selected="selected">Choose a phase</option>
 							<?php
+							/*
 							$phases = new PhaseType();
 							$phases = $phases->getPhases();
 							if (isset($student)) $studentPhases = $student->getPhases();
@@ -437,6 +463,7 @@
 								}
 								echo ">".$phases[$i]->getPhase()."</option>";
 							}
+							*/
 							?>
 						</select>
 					</div>
@@ -450,7 +477,9 @@
 						<div class="col_cp_third">
 							<div class="form_label">Choose an issue:</div>
 							<select class="text_area select_img" name="issue_options">
-							<?php $stmt = viewPhaseType(0);
+							<?php
+							/*
+							$stmt = viewPhaseType(0);
 							if (mysqli_num_rows($stmt) > 0) { while ($prelim = mysqli_fetch_array($stmt)) {
 								if ($prelim['enabled']) {
 									echo "<optgroup label='".$prelim['phase']."'>";
@@ -461,6 +490,7 @@
 									echo "</optgroup>";
 								}
 							} }
+							*/
 							?>
 							</select>
 						</div>
@@ -472,12 +502,14 @@
 							<div class="form_label">Issues Faced:</div>
 							<select multiple name="issues[]" id='issues' size="5" class="text_area">
 							<?php
+							/*
 							if (isset($student)) {
 								$issuesFaced = $student->getIssuesFaced();
 								for ($i=0; $i<sizeof($issuesFaced); $i++) {
 									echo "<option value='".$issuesFaced[$i]->getIssueId()."'>".$issuesFaced[$i]->getIssue()->getIssue()."</option>";
 								}
 							}
+							*/
 							?>
 							</select>
 						</div>

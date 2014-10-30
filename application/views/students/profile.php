@@ -1,13 +1,7 @@
-<?php
-echo "<pre>";
-print_r($student);
-//print_r($client);
-echo "</pre>";
-?>
 <div class="popup" id="popup"></div>
 <div id="wrapper">
 	<div class="heading_bar rc orange">
-		<h1>Students<a href="?p=<?php echo md5(Page::$stu[2])."&id=".$student->s_upn; ?>"><input type="button" class="btn orange rc" value="Edit" style="height:38px;float:right;margin-top:-6px;margin-right:3.5px;border:solid 1px;border-radius:3px;background-image:none;text-shadow:none;"></a></h1>
+		<h1>Students<a href="<?php echo base_url() . "index.php/students/edit/" . md5(Page::$stu[2])."/".$student->s_upn; ?>"><input type="button" class="btn orange rc" value="Edit" style="height:38px;float:right;margin-top:-6px;margin-right:3.5px;border:solid 1px;border-radius:3px;background-image:none;text-shadow:none;"></a></h1>
 	</div>
 	<div id="content" class="rc border_orange">
 		<div class="heading_bar rc midgrey">

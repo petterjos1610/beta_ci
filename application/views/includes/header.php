@@ -27,6 +27,7 @@
 	<script src="<?php echo base_url(); ?>js/form.validate.js" type="text/javascript" charset="utf-8"></script>
 	<script src="<?php echo base_url(); ?>js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
 	
+	
 	<!---// External JS //---->
 
 </head>
