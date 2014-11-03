@@ -18,6 +18,8 @@ class Tickets extends CI_Controller
 
     public function ticket_subject()
     {
+	
+	
 
         $dogadjaji = $this->ticket->getTicketSubjects();
    
