@@ -29,4 +29,9 @@ SELECT id,command,outputString,enabled FROM Commands LOCK IN SHARE MODE");
 	
 	
 	
+	
+	
+	
+	
+	
 }

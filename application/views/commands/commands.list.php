@@ -5,15 +5,15 @@
 		<div id="content" class="rc">
 
 	<?php
-/*	if (in_array(Page::$cmd[1],$_SESSION['privileges']))
+	/*if (in_array(Page::$cmd[1],$_SESSION['privileges']))
 		echo "<div class='col_fullwidth' style='margin-bottom:20px'><a href='?p=".md5(Page::$cmd[1])."'>
 				<input name='' type='submit' class='btn darkgreen right rc' style='width:200px' value='New' >
 				</a></div>"; */?>
-
+<div class='col_fullwidth' style='margin-bottom:20px'><a href=<?php echo    site_url()."/commands/command_subject_create/"?>>
+				<input name='' type='submit' class='btn darkgreen right rc' style='width:200px' value='New' >
+				</a></div>
 	<?php
-	/*$cmd = new Command();
-	$cmd = $cmd->getCommands();
-	$stmt = viewCommand(0);*/
+	
 	/*if (in_array(Page::$cmd[2],$_SESSION['privileges'])) $isEditable = true;
 	else*/ $isEditable = false;
 	echo "<div id='' class='trans_table  text_area rc'><table class='datatable'><tr class='header'><th style='width:40%; text-align:left;'>Command Code</th><th style='width:40%; text-align:left;'>Description</th><th>Enabled</th>";
@@ -25,7 +25,7 @@
 		echo "</div></td>";
 		if ($isEditable)?>
 
-        <td><a href="<?php echo    site_url()."/tickets/ticket_subject_edit/".$cmd[$i]->id; ?>"><div class='small_btn yellow_bg'>Edit</div></a></td>
+        <td><a href="<?php echo    site_url()."/commands/command_subject_edit/".$cmd[$i]->id; ?>"><div class='small_btn yellow_bg'>Edit</div></a></td>
     <?php
         echo "</tr>";
 		echo "</tr>";

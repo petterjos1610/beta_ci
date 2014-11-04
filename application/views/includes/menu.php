@@ -198,13 +198,13 @@ switch ($this->uri->segment(3)) {
 					<li><a class="menu_grey <?php if ($colour == "grey") echo "current_tab"; ?>" style="cursor:pointer;"><span><i class="fa fa-cog"></i></span>Type Setting</a>
 						<ul class="grey-ul">
 							<?php if (in_array(Page::$tkt[0],$this->client->getPrivileges())) { ?><li><a href="<?php echo base_url(); ?>index.php/tickets/ticket_subject<?php //echo md5(Page::$tkt[0]); ?>">Ticket Topics</a></li><?php } ?>
-							<?php if (in_array(Page::$cmd[0],$this->client->getPrivileges())) { ?><li><a href="<?php echo base_url(); ?>index.php/commands/view/<?php echo md5(Page::$cmd[0]); ?>">Commands</a></li><?php } ?>
+							<?php  ?><li><a href="<?php echo base_url(); ?>index.php/commands/command_subject<?php /// echo md5(Page::$cmd[0]); ?>">Commands</a></li><?php ?>
 							<?php if (in_array(Page::$slc[0],$this->client->getPrivileges())) { ?><li><a href="<?php echo base_url(); ?>index.php/sessionlocations/view/<?php echo md5(Page::$slc[0]); ?>">Session Locations</a></li><?php } ?>
 								<?php if (in_array(Page::$stp[0],$this->client->getPrivileges())) { ?><li><a href="<?php echo base_url(); ?>index.php/studenttypes/<?php // echo md5(Page::$stp[0]); ?>">Student Types</a></li><?php } ?>
 									<?php if (in_array(Page::$eth[0],$this->client->getPrivileges())) { ?><li><a href="<?php echo base_url(); ?>index.php/ethnicities/<?php //echo md5(Page::$eth[0]); ?>">Ethnicities</a></li><?php } ?>
 							<?php if (in_array(Page::$sjt[0],$this->client->getPrivileges())) { ?><li><a href="<?php echo base_url(); ?>index.php/subjects/view/<?php echo md5(Page::$sjt[0]); ?>">Subjects</a></li><?php } ?>
 							<?php if (in_array(Page::$pit[0],$this->client->getPrivileges())) { ?><li><a href="<?php echo base_url(); ?>index.php/issues/view/<?php echo md5(Page::$pit[0]); ?>">Phase/Issue Types</a></li><?php } ?>
-							<?php if (in_array(Page::$crr[0],$this->client->getPrivileges())) { ?><li><a href="<?php echo base_url(); ?>index.php/careers/view/<?php echo md5(Page::$crr[0]); ?>">Career Types</a></li><?php } ?>
+							<?php if (in_array(Page::$crr[0],$this->client->getPrivileges())) { ?><li><a href="<?php echo base_url(); ?>index.php/careers/<?php //echo md5(Page::$crr[0]); ?>">Career Types</a></li><?php } ?>
 							<?php if (in_array(Page::$cbt[0],$this->client->getPrivileges())) { ?><li><a href="<?php echo base_url(); ?>index.php/cities/view/<?php echo md5(Page::$cbt[0]); ?>">Cities/Boroughs</a></li><?php } ?>
 									<li><a href="<?php echo base_url(); ?>index.php/religions/<?php //echo md5(Page::$rel[0]); ?>">Religions</a></li>
 							<?php //if (in_array(Page::$cbt[0],$this->client->getPrivileges())) { ?><li><a href="<?php echo base_url(); ?>index.php/campaigns/view/<?php echo md5(Page::$ads[0]); ?>">Ad Campaigns</a></li><?php// } ?>
